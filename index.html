@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lions Club Charity Ice Cream Event</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-paw"></i>
+                <span>Lions Club</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Ice Cream Menu</a>
+                <a href="#order" class="nav-link">Order Now</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Sweet Treats for a Sweet Cause</h1>
+            <p class="hero-subtitle">Join Lions Club in raising funds for our community through delicious artisan ice cream</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">$25,000</span>
+                    <span class="stat-label">Goal</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="raised-amount">$8,750</span>
+                    <span class="stat-label">Raised</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">35%</span>
+                    <span class="stat-label">Complete</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#order" class="btn btn-primary">Order Ice Cream</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="ice-cream-illustration">
+                <i class="fas fa-ice-cream"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Making a Difference, One Scoop at a Time</h2>
+                <p>Every purchase supports Lions Club's community initiatives and local families in need</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Funds raised go directly to supporting local families, food banks, and community programs in our area.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Lions Club Mission</h3>
+                    <p>We serve our community through various charitable initiatives, focusing on vision care, hunger relief, and youth programs.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Quality Treats</h3>
+                    <p>Premium artisan ice cream made with locally sourced ingredients, ensuring every bite is worth the cause.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Ice Cream Menu</h2>
+                <p>Choose from our selection of premium flavors</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h3>Classic Vanilla Bean</h3>
+                    <p>Rich Madagascar vanilla with real vanilla bean specks</p>
+                    <div class="price">$8</div>
+                    <button class="btn btn-small add-to-cart" data-item="Classic Vanilla Bean" data-price="8">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h3>Chocolate Fudge</h3>
+                    <p>Decadent dark chocolate with fudge swirls</p>
+                    <div class="price">$8</div>
+                    <button class="btn btn-small add-to-cart" data-item="Chocolate Fudge" data-price="8">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h3>Strawberry Swirl</h3>
+                    <p>Fresh strawberry ice cream with berry compote</p>
+                    <div class="price">$8</div>
+                    <button class="btn btn-small add-to-cart" data-item="Strawberry Swirl" data-price="8">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h3>Mint Chocolate Chip</h3>
+                    <p>Cool mint with premium chocolate chips</p>
+                    <div class="price">$8</div>
+                    <button class="btn btn-small add-to-cart" data-item="Mint Chocolate Chip" data-price="8">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h3>Cookies & Cream</h3>
+                    <p>Vanilla ice cream loaded with cookie pieces</p>
+                    <div class="price">$8</div>
+                    <button class="btn btn-small add-to-cart" data-item="Cookies & Cream" data-price="8">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h3>Caramel Pecan</h3>
+                    <p>Butter caramel with roasted pecans</p>
+                    <div class="price">$9</div>
+                    <button class="btn btn-small add-to-cart" data-item="Caramel Pecan" data-price="9">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order">
+        <div class="container">
+            <div class="order-content">
+                <div class="order-form-section">
+                    <h2>Place Your Order</h2>
+                    <form id="order-form" class="order-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup-date">Pickup Date</label>
+                            <input type="date" id="pickup-date" name="pickup-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests</label>
+                            <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Complete Order</button>
+                    </form>
+                </div>
+                <div class="cart-section">
+                    <h3>Your Order</h3>
+                    <div id="cart-items" class="cart-items">
+                        <p class="empty-cart">Your cart is empty. Add some ice cream!</p>
+                    </div>
+                    <div class="cart-total">
+                        <div class="total-line">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Donation (10%):</span>
+                            <span id="donation">$0.00</span>
+                        </div>
+                        <div class="total-line total-main">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+                    <button id="clear-cart" class="btn btn-outline">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about our charity event or need more information?</p>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>charity@lionsclub.org</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Community Center Dr, Your City, ST 12345</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="event-info">
+                    <h3>Event Details</h3>
+                    <div class="event-detail">
+                        <strong>When:</strong> Every Saturday in October
+                    </div>
+                    <div class="event-detail">
+                        <strong>Time:</strong> 10:00 AM - 6:00 PM
+                    </div>
+                    <div class="event-detail">
+                        <strong>Pickup Location:</strong> Community Center Parking Lot
+                    </div>
+                    <div class="event-detail">
+                        <strong>Pre-orders:</strong> Recommended for guaranteed availability
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-paw"></i>
+                        <span>Lions Club</span>
+                    </div>
+                    <p>Serving our community with pride and dedication</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#order">Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>charity@lionsclub.org</p>
+                    <p>(555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Lions Club. All rights reserved. | Website created for charity purposes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
