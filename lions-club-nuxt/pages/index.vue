@@ -4,6 +4,7 @@
     <AboutSection />
     <MenuSection />
     <OrderSection @order-completed="handleOrderCompleted" />
+    <OptInSection />
     <ContactSection />
   </div>
 </template>

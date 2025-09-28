@@ -107,16 +107,18 @@
 </template>
 
 <script setup>
-const { 
-  cartItems, 
-  removeFromCart, 
-  updateQuantity, 
-  clearCart, 
-  subtotal, 
-  donation, 
-  total, 
-  formatCurrency 
+const {
+  cartItems,
+  removeFromCart,
+  updateQuantity,
+  clearCart,
+  subtotal,
+  donation,
+  total,
+  formatCurrency
 } = useCart()
+
+const { submitOrder: saveOrderToSupabase } = useSupabase()
 
 const orderForm = ref({
   name: '',
@@ -193,9 +195,6 @@ const submitOrder = async () => {
   isSubmitting.value = true
   
   try {
-    // Simulate order processing
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
     const orderData = {
       customer: { ...orderForm.value },
       items: [...cartItems.value],
@@ -206,27 +205,35 @@ const submitOrder = async () => {
       }
     }
     
-    console.log('Order submitted:', orderData)
+    // Submit to Supabase
+    const result = await saveOrderToSupabase(orderData)
     
-    showMessage(
-      `Thank you ${orderForm.value.name}! Your order has been received. You will receive a confirmation email at ${orderForm.value.email}. Total: ${formatCurrency(total.value)}`,
-      'success'
-    )
-    
-    // Reset form and cart
-    orderForm.value = {
-      name: '',
-      email: '',
-      phone: '',
-      pickupDate: '',
-      specialRequests: ''
+    if (result.success) {
+      console.log('Order submitted to Supabase:', result.data)
+      
+      showMessage(
+        `Thank you ${orderForm.value.name}! Your order has been received and saved. You will receive a confirmation email at ${orderForm.value.email}. Total: ${formatCurrency(total.value)}`,
+        'success'
+      )
+      
+      // Reset form and cart
+      orderForm.value = {
+        name: '',
+        email: '',
+        phone: '',
+        pickupDate: '',
+        specialRequests: ''
+      }
+      clearCart()
+      
+      // Emit event to update fundraising progress
+      emit('orderCompleted', total.value)
+    } else {
+      throw new Error(result.error?.message || 'Order submission failed')
     }
-    clearCart()
-    
-    // Emit event to update fundraising progress (if parent component is listening)
-    emit('orderCompleted', total.value)
     
   } catch (error) {
+    console.error('Order submission error:', error)
     showMessage('There was an error processing your order. Please try again.', 'error')
   } finally {
     isSubmitting.value = false
